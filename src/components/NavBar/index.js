@@ -33,7 +33,7 @@ const NavBar = () => (
     {value => {
       const {activeRoute, theme, changeActiveRoute} = value
 
-      const background = theme ? '#1e293b' : '#ffffff'
+      const background = theme ? '#181818' : '#ffffff'
       const color = theme ? '#ffffff' : '#000000'
 
       const activeHomeBg = activeRoute === 'HOME' ? '#f1f5f9' : null
