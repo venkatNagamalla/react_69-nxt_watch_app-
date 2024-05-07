@@ -47,3 +47,23 @@ export const SearchButton = styled.button`
   background-color: #f1f1f1;
   border-left: 1px solid #475569;
 `
+
+export const FailureButton = styled.button`
+  border: none;
+  background-color: #4f46e5;
+  color: #ffffff;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 3px;
+`
+
+export const FailureContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 80vh;
+  margin-top: 5px;
+`
