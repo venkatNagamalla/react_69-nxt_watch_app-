@@ -12,11 +12,13 @@ import {
   InputContainer,
   Input,
   SearchButton,
-  FailureButton,
-  FailureContainer,
+  RetryButton,
+  RetryContainer,
+  VideosListContainer,
 } from './styledComponents'
 import FailureView from '../FailureView'
 import VideoItem from '../VideoItem'
+import NoSearchResults from '../NoSearchResults'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -60,7 +62,6 @@ const Home = () => {
     if (response.ok) {
       const data = await response.json()
       const updatedData = data.videos.map(eachVideo => modify(eachVideo))
-      console.log(updatedData)
       setVideoDetails({
         details: updatedData,
         apiStatus: apiStatusConstants.success,
@@ -107,21 +108,35 @@ const Home = () => {
         const renderLoaderView = () => <LoaderView />
 
         const renderFailureView = () => (
-          <FailureContainer>
+          <RetryContainer>
             <FailureView />
-            <FailureButton type="button" onClick={getVideos}>
+            <RetryButton type="button" onClick={getVideos}>
               Retry
-            </FailureButton>
-          </FailureContainer>
+            </RetryButton>
+          </RetryContainer>
         )
 
-        const renderSuccessView = () => (
-          <ul>
+        const renderListOfVideos = () => (
+          <VideosListContainer>
             {videoDetails.details.map(eachVideo => (
               <VideoItem key={eachVideo.id} videoDetails={eachVideo} />
             ))}
-          </ul>
+          </VideosListContainer>
         )
+
+        const renderNoResults = () => (
+          <RetryContainer>
+            <NoSearchResults />
+            <RetryButton type="button" onClick={getVideos}>
+              Retry
+            </RetryButton>
+          </RetryContainer>
+        )
+
+        const renderSuccessView = () =>
+          videoDetails.details.length === 0
+            ? renderNoResults()
+            : renderListOfVideos()
 
         const renderVideos = () => {
           switch (videoDetails.apiStatus) {

@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
-  border: 1px solid #000;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -13,14 +12,21 @@ export const HomeContainer = styled.div`
 
 export const Container = styled.div`
   background-color: ${props => props.bgColor};
-  padding: 15px;
   width: 100%;
   height: 100%;
+  @media screen and (min-width: 576px) {
+    padding: 20px;
+  }
 `
 
 export const InputContainer = styled.div`
   border: 1px solid #475569;
   height: 38px;
+  margin: 20px;
+  @media screen and (min-width: 576px) {
+    width: 70%;
+    margin: 0px;
+  }
   @media screen and (min-width: 768px) {
     width: 50%;
   }
@@ -40,7 +46,7 @@ export const Input = styled.input`
 
 export const SearchButton = styled.button`
   width: 20%;
-  height: 100%;
+  height: 99%;
   font-size: 16px;
   outline: none;
   border: none;
@@ -48,7 +54,7 @@ export const SearchButton = styled.button`
   border-left: 1px solid #475569;
 `
 
-export const FailureButton = styled.button`
+export const RetryButton = styled.button`
   border: none;
   background-color: #4f46e5;
   color: #ffffff;
@@ -58,7 +64,7 @@ export const FailureButton = styled.button`
   border-radius: 3px;
 `
 
-export const FailureContainer = styled.div`
+export const RetryContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,4 +72,15 @@ export const FailureContainer = styled.div`
   padding: 10px;
   height: 80vh;
   margin-top: 5px;
+`
+
+export const VideosListContainer = styled.ul`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media screen and (min-width: 576px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `

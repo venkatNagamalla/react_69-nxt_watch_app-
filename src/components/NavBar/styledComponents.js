@@ -22,7 +22,6 @@ export const Icon = styled.li`
   text-align: center;
   background-color: ${props => props.bgColor};
   @media screen and (min-width: 768px) {
-    border: 1px solid red;
     justify-content: flex-start;
     width: 100%;
     margin: 0px;
@@ -31,7 +30,6 @@ export const Icon = styled.li`
 `
 
 export const DeskIconsContainer = styled.div`
-  border: 1px solid yellow;
   display: none;
   @media screen and (min-width: 768px) {
     display: block;
@@ -46,9 +44,9 @@ export const IconName = styled.p`
 
 export const SideBar = styled.div`
   @media screen and (min-width: 768px) {
-    border: 1px solid #000;
     width: 18%;
     height: 100vh;
+    position: relative;
     background-color: ${props => props.background};
   }
 `
