@@ -44,7 +44,7 @@ export const IconName = styled.p`
 
 export const SideBar = styled.div`
   @media screen and (min-width: 768px) {
-    width: 18%;
+    width: 22%;
     height: 100vh;
     position: relative;
     background-color: ${props => props.background};

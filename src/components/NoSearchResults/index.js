@@ -21,11 +21,10 @@ const NoSearchResults = () => (
             alt="no videos"
           />
           <NoResultsHeading color={headingColor}>
-            Oops! Something Went Wrong
+            No Search results found
           </NoResultsHeading>
           <NoResultsText color={textColor}>
-            We are having some trouble to complete your request. Please try
-            again.
+            Try different key words or remove search filter
           </NoResultsText>
         </NoResultsContainer>
       )

@@ -19,7 +19,7 @@ const FailureView = () => (
 
       return (
         <FailureContainer>
-          <FailureImage src={imgUrl} alt="failure image" />
+          <FailureImage src={imgUrl} alt="failure view" />
           <FailureHeading color={headingColor}>
             Oops! Something Went Wrong
           </FailureHeading>

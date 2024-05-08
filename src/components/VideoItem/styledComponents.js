@@ -35,7 +35,7 @@ export const ChannelProfile = styled.img`
 export const TitleContainer = styled.div`
   margin-left: 10px;
 `
-export const Title = styled.h1`
+export const Title = styled.p`
   font-size: 16px;
   color: ${props => props.color};
   font-weight: 400;
@@ -56,7 +56,7 @@ export const ChannelDetailsContainer = styled.div`
   }
 `
 
-export const ViewsContainer = styled.ul`
+export const ViewsContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin-left: 35px;
@@ -66,20 +66,15 @@ export const ViewsContainer = styled.ul`
   }
 `
 
-export const Views = styled.li`
+export const Views = styled.p`
   color: #64748b;
   margin-right: 35px;
-  list-style-type: disc;
   font-size: 15px;
   font-weight: 405;
-  @media screen and (min-width: 576px) {
-    list-style-type: none;
-  }
 `
 
-export const Years = styled.li`
+export const Years = styled.p`
   color: #64748b;
   font-size: 15px;
   font-weight: 405;
-  list-style-type: disc;
 `

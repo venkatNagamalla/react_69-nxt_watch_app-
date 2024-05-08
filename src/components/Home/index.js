@@ -97,9 +97,14 @@ const Home = () => {
               onChange={e => setSearchInput(e.target.value)}
               bgColor={inputBg}
               placeholder="Search"
-              type="text"
+              type="search"
+              onKeyDown={e => e.key === 'Enter' && getVideos()}
             />
-            <SearchButton type="button" onClick={onSearchBtnClick}>
+            <SearchButton
+              data-testid="searchButton"
+              type="button"
+              onClick={onSearchBtnClick}
+            >
               <IoIosSearch />
             </SearchButton>
           </InputContainer>

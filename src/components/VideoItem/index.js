@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 import {
   VideoItemContainer,
   Thumbnail,
@@ -11,6 +13,7 @@ import {
   Views,
   Years,
 } from './styledComponents'
+import './index.css'
 import Context from '../../context/Context'
 
 const VideoItem = props => {
@@ -35,20 +38,22 @@ const VideoItem = props => {
 
         return (
           <VideoItemContainer>
-            <Thumbnail src={thumbnailUrl} alt="video thumbnail" />
-            <VideoDetailsContainer>
-              <ChannelProfile src={profileImageUrl} alt="channel logo" />
-              <TitleContainer>
-                <Title color={color}>{title}</Title>
-                <ChannelDetailsContainer>
-                  <ChannelName>{name}</ChannelName>
-                  <ViewsContainer>
-                    <Views>{viewCount} views</Views>
-                    <Years>{publishedAt}</Years>
-                  </ViewsContainer>
-                </ChannelDetailsContainer>
-              </TitleContainer>
-            </VideoDetailsContainer>
+            <Link className="link-item" to={`/videos/${id}`}>
+              <Thumbnail src={thumbnailUrl} alt="video thumbnail" />
+              <VideoDetailsContainer>
+                <ChannelProfile src={profileImageUrl} alt="channel logo" />
+                <TitleContainer>
+                  <Title color={color}>{title}</Title>
+                  <ChannelDetailsContainer>
+                    <ChannelName>{name}</ChannelName>
+                    <ViewsContainer>
+                      <Views>{viewCount} views</Views>
+                      <Years>{publishedAt}</Years>
+                    </ViewsContainer>
+                  </ChannelDetailsContainer>
+                </TitleContainer>
+              </VideoDetailsContainer>
+            </Link>
           </VideoItemContainer>
         )
       }}

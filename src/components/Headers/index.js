@@ -52,7 +52,11 @@ const Headers = props => {
             )}
 
             <ButtonsContainer>
-              <ThemeButton onClick={changeTheme} type="button">
+              <ThemeButton
+                data-testid="theme"
+                onClick={changeTheme}
+                type="button"
+              >
                 {theme ? (
                   <FiSun size={20} color={color} />
                 ) : (
