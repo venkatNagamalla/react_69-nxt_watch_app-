@@ -2,7 +2,7 @@ import Cookies from 'js-cookie'
 import Popup from 'reactjs-popup'
 import {FaMoon} from 'react-icons/fa'
 import {FiSun, FiLogOut} from 'react-icons/fi'
-import {withRouter} from 'react-router-dom'
+import {withRouter, Link} from 'react-router-dom'
 import {
   NavContainer,
   LogOutButton,
@@ -37,19 +37,15 @@ const Headers = props => {
 
         const deskLogout = theme ? '#ffffff' : '#4f46e5'
 
+        const logo = theme
+          ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
+          : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
+
         return (
           <NavContainer bgColor={bgColor}>
-            {theme ? (
-              <WebsiteLogo
-                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png"
-                alt="website logo"
-              />
-            ) : (
-              <WebsiteLogo
-                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-                alt="website logo"
-              />
-            )}
+            <Link to="/">
+              <WebsiteLogo src={logo} alt="website logo" />
+            </Link>
 
             <ButtonsContainer>
               <ThemeButton
@@ -71,7 +67,7 @@ const Headers = props => {
               <Popup
                 modal
                 trigger={
-                  <LogOutButton type="button">
+                  <LogOutButton data-tesid="logout" type="button">
                     <FiLogOut size={20} color={color} />
                   </LogOutButton>
                 }
@@ -84,7 +80,11 @@ const Headers = props => {
                       </PopUpHeading>
                     </HeadingContainer>
                     <PopUpButtonsContainer>
-                      <CancelButton onClick={() => close()} type="button">
+                      <CancelButton
+                        data-testid="close"
+                        onClick={() => close()}
+                        type="button"
+                      >
                         Cancel
                       </CancelButton>
                       <ConfirmButton type="button" onClick={onLogOut}>

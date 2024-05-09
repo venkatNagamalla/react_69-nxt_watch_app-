@@ -9,6 +9,8 @@ export const NavContainer = styled.nav`
   background-color: ${props => props.bgColor};
   @media screen and (min-width: 768px) {
     padding: 10px 45px 10px 45px;
+    position: fixed;
+    width: 100%;
   }
 `
 

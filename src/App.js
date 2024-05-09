@@ -1,14 +1,16 @@
 import {Component} from 'react'
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 import Login from './components/Login'
 import Home from './components/Home'
 import Context from './context/Context'
-import './App.css'
 import Trending from './components/Trending'
 import ProtectedRoute from './components/ProtectedRoute'
 import Gaming from './components/Gaming'
 import Video from './components/Video'
 import SavedVideos from './components/SavedVideos'
+import NotFound from './components/NotFound'
+import './App.css'
+
 // Replace your code here
 
 class App extends Component {
@@ -40,6 +42,8 @@ class App extends Component {
           <ProtectedRoute exact path="/gaming" component={Gaming} />
           <ProtectedRoute exact path="/saved-videos" component={SavedVideos} />
           <ProtectedRoute exact path="/videos/:id" component={Video} />
+          <Route path="/not-found" component={NotFound} />
+          <Redirect to="not-found" />
         </Switch>
       </Context.Provider>
     )

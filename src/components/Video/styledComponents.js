@@ -29,3 +29,16 @@ export const RetryContainer = styled.div`
   height: 80vh;
   margin-top: 5px;
 `
+
+export const Container = styled.div`
+  background-color: ${props => props.bgColor};
+  width: 100%;
+  min-height: 100vh;
+  @media screen and (min-width: 576px) {
+    padding: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    padding-left: 23%;
+    margin-top: 50px;
+  }
+`

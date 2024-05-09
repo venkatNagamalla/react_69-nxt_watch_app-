@@ -34,7 +34,7 @@ const NavBar = () => (
       const {activeRoute, theme, changeActiveRoute} = value
 
       const background = theme ? '#181818' : '#ffffff'
-      const color = theme ? '#ffffff' : '#000000'
+      const color = theme ? '#64748b' : '#181818'
 
       const activeHomeBg = activeRoute === 'HOME' ? '#f1f5f9' : null
       const activeTrendingBg = activeRoute === 'TRENDING' ? '#f1f5f9' : null
@@ -48,18 +48,11 @@ const NavBar = () => (
               <Link onClick={() => changeActiveRoute('HOME')} to="/">
                 <AiFillHome
                   size={22}
-                  color={activeRoute === 'HOME' ? 'red' : null}
+                  color={activeRoute === 'HOME' ? 'red' : '#64748b'}
                 />
               </Link>
             </Icon>
-            <Icon bgColor={activeGamingBg}>
-              <Link onClick={() => changeActiveRoute('GAMING')} to="/gaming">
-                <SiYoutubegaming
-                  size={22}
-                  color={activeRoute === 'GAMING' ? 'red' : null}
-                />
-              </Link>
-            </Icon>
+
             <Icon bgColor={activeTrendingBg}>
               <Link
                 onClick={() => changeActiveRoute('TRENDING')}
@@ -67,7 +60,15 @@ const NavBar = () => (
               >
                 <ImFire
                   size={22}
-                  color={activeRoute === 'TRENDING' ? 'red' : null}
+                  color={activeRoute === 'TRENDING' ? 'red' : '#64748b'}
+                />
+              </Link>
+            </Icon>
+            <Icon bgColor={activeGamingBg}>
+              <Link onClick={() => changeActiveRoute('GAMING')} to="/gaming">
+                <SiYoutubegaming
+                  size={22}
+                  color={activeRoute === 'GAMING' ? 'red' : '#64748b'}
                 />
               </Link>
             </Icon>
@@ -78,7 +79,7 @@ const NavBar = () => (
               >
                 <RiVideoAddFill
                   size={22}
-                  color={activeRoute === 'SAVED' ? 'red' : null}
+                  color={activeRoute === 'SAVED' ? 'red' : '#64748b'}
                 />
               </Link>
             </Icon>
@@ -90,21 +91,16 @@ const NavBar = () => (
                 onClick={() => changeActiveRoute('HOME')}
                 to="/"
               >
-                <Icon>
-                  <AiFillHome color={activeRoute === 'HOME' ? 'red' : null} />
-                  <IconName color={color}>Home</IconName>
-                </Icon>
-              </Link>
-              <Link
-                className="link"
-                onClick={() => changeActiveRoute('GAMING')}
-                to="/gaming"
-              >
-                <Icon>
-                  <SiYoutubegaming
-                    color={activeRoute === 'GAMING' ? 'red' : null}
+                <Icon bgColor={activeHomeBg}>
+                  <AiFillHome
+                    color={activeRoute === 'HOME' ? 'red' : '#64748b'}
                   />
-                  <IconName color={color}>Gaming</IconName>
+                  <IconName
+                    bold={activeRoute === 'HOME' ? 'bold' : 'normal'}
+                    color={color}
+                  >
+                    Home
+                  </IconName>
                 </Icon>
               </Link>
               <Link
@@ -112,21 +108,51 @@ const NavBar = () => (
                 onClick={() => changeActiveRoute('TRENDING')}
                 to="/trending"
               >
-                <Icon>
-                  <ImFire color={activeRoute === 'TRENDING' ? 'red' : null} />
-                  <IconName color={color}>Trending</IconName>
+                <Icon bgColor={activeTrendingBg}>
+                  <ImFire
+                    color={activeRoute === 'TRENDING' ? 'red' : '#64748b'}
+                  />
+                  <IconName
+                    bold={activeRoute === 'TRENDING' ? 'bold' : 'normal'}
+                    color={color}
+                  >
+                    Trending
+                  </IconName>
                 </Icon>
               </Link>
+              <Link
+                className="link"
+                onClick={() => changeActiveRoute('GAMING')}
+                to="/gaming"
+              >
+                <Icon bgColor={activeGamingBg}>
+                  <SiYoutubegaming
+                    color={activeRoute === 'GAMING' ? 'red' : '#64748b'}
+                  />
+                  <IconName
+                    bold={activeRoute === 'GAMING' ? 'bold' : 'normal'}
+                    color={color}
+                  >
+                    Gaming
+                  </IconName>
+                </Icon>
+              </Link>
+
               <Link
                 className="link"
                 onClick={() => changeActiveRoute('SAVED')}
                 to="/saved-videos"
               >
-                <Icon>
+                <Icon bgColor={activeSavedBg}>
                   <RiVideoAddFill
-                    color={activeRoute === 'SAVED' ? 'red' : null}
+                    color={activeRoute === 'SAVED' ? 'red' : '#64748b'}
                   />
-                  <IconName color={color}>Saved videos</IconName>
+                  <IconName
+                    bold={activeRoute === 'SAVED' ? 'bold' : 'normal'}
+                    color={color}
+                  >
+                    Saved videos
+                  </IconName>
                 </Icon>
               </Link>
             </DeskIconsContainer>

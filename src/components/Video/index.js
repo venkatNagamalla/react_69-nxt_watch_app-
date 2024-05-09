@@ -6,7 +6,12 @@ import LoaderView from '../LoaderView'
 import FailureView from '../FailureView'
 import Context from '../../context/Context'
 
-import {VideoContainer, RetryContainer, RetryButton} from './styledComponents'
+import {
+  VideoContainer,
+  Container,
+  RetryContainer,
+  RetryButton,
+} from './styledComponents'
 import SingleVideoDetails from '../SingleVideoDetails'
 
 const apiStatusConstants = {
@@ -110,9 +115,9 @@ const Video = props => {
         return (
           <>
             <Headers />
-            <VideoContainer bgColor={bgColor}>
+            <VideoContainer>
               <NavBar />
-              {renderVideoDetails()}
+              <Container bgColor={bgColor}>{renderVideoDetails()}</Container>
             </VideoContainer>
           </>
         )

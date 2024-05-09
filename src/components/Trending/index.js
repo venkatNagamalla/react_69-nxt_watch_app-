@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
+import {ImFire} from 'react-icons/im'
 import Cookies from 'js-cookie'
-import {IoIosSearch} from 'react-icons/io'
 import Headers from '../Headers'
 import NavBar from '../NavBar'
 import Context from '../../context/Context'
@@ -9,16 +9,15 @@ import LoaderView from '../LoaderView'
 import {
   TrendingContainer,
   Container,
-  InputContainer,
-  Input,
-  SearchButton,
   RetryButton,
   RetryContainer,
   VideosListContainer,
+  BannerSection,
+  Card,
+  Text,
 } from './styledComponents'
 import FailureView from '../FailureView'
 import VideoItem from '../VideoItem'
-import NoSearchResults from '../NoSearchResults'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -79,8 +78,10 @@ const Trending = () => {
       {value => {
         const {theme} = value
 
-        const bgColor = theme ? '#0f0f0f' : '#f1f1f1'
+        const bgColor = theme ? '#181818' : '#f8fafc'
         const color = theme ? '#ffffff' : '#000000'
+
+        const bannerBg = theme ? '#606060' : '#f1f1f1'
 
         const renderLoaderView = () => <LoaderView />
 
@@ -114,13 +115,22 @@ const Trending = () => {
           }
         }
 
+        const renderBanner = () => (
+          <BannerSection bgColor={bannerBg}>
+            <Card>
+              <ImFire color="#ff0000" size={25} />
+            </Card>
+            <Text color={color}>Trending</Text>
+          </BannerSection>
+        )
+
         return (
           <>
             <Headers />
             <TrendingContainer>
               <NavBar />
               <Container bgColor={bgColor}>
-                {/* {TrendingBanner} */}
+                {renderBanner()}
                 {renderVideos()}
               </Container>
             </TrendingContainer>

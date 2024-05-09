@@ -13,45 +13,14 @@ export const TrendingContainer = styled.div`
 export const Container = styled.div`
   background-color: ${props => props.bgColor};
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   @media screen and (min-width: 576px) {
     padding: 20px;
   }
-`
-
-export const InputContainer = styled.div`
-  border: 1px solid #475569;
-  height: 38px;
-  margin: 20px;
-  @media screen and (min-width: 576px) {
-    width: 70%;
-    margin: 0px;
-  }
   @media screen and (min-width: 768px) {
-    width: 50%;
+    padding-left: 23%;
+    margin-top: 50px;
   }
-`
-
-export const Input = styled.input`
-  width: 80%;
-  height: 100%;
-  border: none;
-  outline: none;
-  padding: 15px;
-  background-color: ${props => props.bgColor};
-  font-size: 18px;
-  font-weight: 400;
-  color: ${props => props.color};
-`
-
-export const SearchButton = styled.button`
-  width: 20%;
-  height: 99%;
-  font-size: 16px;
-  outline: none;
-  border: none;
-  background-color: #f1f1f1;
-  border-left: 1px solid #475569;
 `
 
 export const RetryButton = styled.button`
@@ -75,12 +44,39 @@ export const RetryContainer = styled.div`
 `
 
 export const VideosListContainer = styled.ul`
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   @media screen and (min-width: 576px) {
     flex-direction: row;
     flex-wrap: wrap;
   }
+`
+
+export const BannerSection = styled.div`
+  background-color: ${props => props.bgColor};
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+`
+
+export const Card = styled.div`
+  border-radius: 100px;
+  background-color: #cbd5e1;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+`
+
+export const Text = styled.p`
+  font-weight: bold;
+  font-size: 25px;
+  color: ${props => props.color};
 `

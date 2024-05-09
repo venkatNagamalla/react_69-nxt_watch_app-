@@ -5,14 +5,14 @@ export const VideoMainContainer = styled.div`
   height: 80vh;
   margin-top: 10px;
   @media screen and (min-width: 768px) {
-    margin: 20px 60px 10px 60px;
+    padding: 18px;
   }
 `
 
 export const PlayerContainer = styled.div`
   height: 60%;
   @media screen and (min-width: 768px) {
-    height: 90%;
+    height: 100%;
   }
 `
 

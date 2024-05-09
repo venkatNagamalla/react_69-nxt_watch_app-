@@ -11,6 +11,10 @@ export const MobileIconsContainer = styled.ul`
   }
 `
 
+export const NavContainer = styled.nav`
+  border: 1px solid #000;
+`
+
 export const Icon = styled.li`
   height: 50px;
   padding: 5px;
@@ -40,13 +44,15 @@ export const DeskIconsContainer = styled.div`
 export const IconName = styled.p`
   color: ${props => props.color};
   margin-left: 25px;
+  font-weight: ${props => props.bold};
 `
 
 export const SideBar = styled.div`
   @media screen and (min-width: 768px) {
     width: 22%;
     height: 100vh;
-    position: relative;
+    position: fixed;
+    top: 53px;
     background-color: ${props => props.background};
   }
 `

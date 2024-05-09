@@ -17,15 +17,20 @@ export const Container = styled.div`
   @media screen and (min-width: 576px) {
     padding: 20px;
   }
+  @media screen and (min-width: 768px) {
+    padding-left: 23%;
+    margin-top: 50px;
+  }
 `
 
 export const InputContainer = styled.div`
   border: 1px solid #475569;
   height: 38px;
   margin: 20px;
+
   @media screen and (min-width: 576px) {
     width: 70%;
-    margin: 0px;
+    margin-left: 15px;
   }
   @media screen and (min-width: 768px) {
     width: 50%;

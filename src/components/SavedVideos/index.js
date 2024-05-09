@@ -1,13 +1,15 @@
 import Headers from '../Headers'
 import NavBar from '../NavBar'
-import {SavedVideosContainer} from './styledComponents'
+import {SavedVideosContainer, Container} from './styledComponents'
 
 const SavedVideos = () => (
   <>
     <Headers />
     <SavedVideosContainer>
       <NavBar />
-      <h1>Saved</h1>
+      <Container>
+        <h1>Saved</h1>
+      </Container>
     </SavedVideosContainer>
   </>
 )

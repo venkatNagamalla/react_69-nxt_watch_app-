@@ -80,10 +80,10 @@ const Home = () => {
       {value => {
         const {theme} = value
 
-        const bgColor = theme ? '#000000' : '#f1f1f1'
-        const color = theme ? '#ffffff' : '#000000'
+        const bgColor = theme ? '#181818' : '#f8fafc'
+        const color = theme ? '#f1f1f1' : '#181818'
 
-        const inputBg = theme ? '#000000' : '#ffffff'
+        const inputBg = theme ? '#000000' : '#f8fafc'
 
         const onSearchBtnClick = () => {
           getVideos()

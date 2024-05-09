@@ -1,3 +1,11 @@
 .link {
   text-decoration: none;
 }
+
+.active li {
+  background-color: red;
+}
+
+.nav {
+  border: 1px solid #000;
+}
