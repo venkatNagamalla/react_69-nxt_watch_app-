@@ -60,13 +60,16 @@ export const SideBar = styled.div`
   }
 `
 export const SidebarContainer = styled.div`
-  width: 100%;
-  display: flex;
-  height: 210px;
-  flex-direction: column;
-  margin-bottom: 50px;
-  justify-content: space-between;
-  padding: 20px;
+  display: none;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    display: flex;
+    height: 210px;
+    flex-direction: column;
+    margin-bottom: 50px;
+    justify-content: space-between;
+    padding: 20px;
+  }
 `
 
 export const LogoIcons = styled.img`
