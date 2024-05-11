@@ -12,7 +12,7 @@ import {
   RetryContainer,
   RetryButton,
 } from './styledComponents'
-import SingleVideoDetails from '../SingleVideoDetails'
+import VideoItemDetails from '../VideoItemDetails'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -93,7 +93,7 @@ const Video = props => {
         )
 
         const renderSuccessView = () => (
-          <SingleVideoDetails
+          <VideoItemDetails
             data-testid="videoItemDetails"
             videoDetails={videoDetails.details}
           />

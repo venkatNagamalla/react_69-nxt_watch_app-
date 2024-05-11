@@ -5,6 +5,9 @@ const Context = React.createContext({
   changeTheme: () => {},
   activeRoute: 'HOME',
   changeActiveRoute: () => {},
+  savedVideosList: [],
+  addVideo: () => {},
+  removeSavedVideo: () => {},
 })
 
 export default Context

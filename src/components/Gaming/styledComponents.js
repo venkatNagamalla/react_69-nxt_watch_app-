@@ -68,7 +68,7 @@ export const Card = styled.div`
   margin-right: 15px;
 `
 
-export const Text = styled.p`
+export const Text = styled.h1`
   font-weight: bold;
   font-size: 25px;
   color: ${props => props.color};

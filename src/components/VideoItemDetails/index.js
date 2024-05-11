@@ -25,8 +25,9 @@ import {
   Comment,
 } from './styledComponents'
 
-const SingleVideoDetails = props => {
+const VideoItemDetails = props => {
   const [isLiked, setIsLiked] = useState('')
+  const [isSaved, setIsSaved] = useState(false)
 
   const handleLike = () => setIsLiked(true)
   const handleDislike = () => setIsLiked(false)
@@ -34,7 +35,7 @@ const SingleVideoDetails = props => {
   const {videoDetails} = props
   const {
     videoUrl,
-    // id,
+    id,
     publishedAt,
     viewCount,
     title,
@@ -46,17 +47,31 @@ const SingleVideoDetails = props => {
   return (
     <Context.Consumer>
       {value => {
-        const {theme} = value
+        const {theme, addVideo, removeSavedVideo} = value
+
+        const addVideoToSave = () => {
+          setIsSaved(prev => !prev)
+          addVideo(videoDetails)
+        }
+
+        const removeVideo = () => {
+          removeSavedVideo(id)
+          setIsSaved(prev => !prev)
+        }
 
         const color = theme ? '#f1f1f1' : '#000000'
+
+        const bgColor = theme ? '#0f0f0f' : '#f1f1f1'
 
         const fontColor = theme ? '#f1f1f1' : '#64748b'
 
         const likeColor = isLiked ? '#2563eb' : '#64748b'
         const dislikeColor = isLiked === false ? '#2563eb' : '#64748b'
 
+        const saved = isSaved ? '#2563eb' : '#64748b'
+
         return (
-          <VideoMainContainer data-testid="videoItemDetails">
+          <VideoMainContainer bgColor={bgColor} data-testid="videoItemDetails">
             <PlayerContainer>
               <ReactPlayer height="100%" width="100%" url={videoUrl} controls />
             </PlayerContainer>
@@ -83,9 +98,23 @@ const SingleVideoDetails = props => {
                     <BiDislike />
                     Dislike
                   </DisLikeButton>
-                  <SaveButton>
-                    <RiAddBoxFill /> Save
-                  </SaveButton>
+                  {isSaved ? (
+                    <SaveButton
+                      color={saved}
+                      type="button"
+                      onClick={removeVideo}
+                    >
+                      <RiAddBoxFill /> Saved
+                    </SaveButton>
+                  ) : (
+                    <SaveButton
+                      color={saved}
+                      type="button"
+                      onClick={addVideoToSave}
+                    >
+                      <RiAddBoxFill /> Save
+                    </SaveButton>
+                  )}
                 </LikesSaveContainer>
               </ViewsLikesContainer>
               <Line />
@@ -105,4 +134,4 @@ const SingleVideoDetails = props => {
   )
 }
 
-export default SingleVideoDetails
+export default VideoItemDetails

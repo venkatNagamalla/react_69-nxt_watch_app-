@@ -78,7 +78,7 @@ const Trending = () => {
       {value => {
         const {theme} = value
 
-        const bgColor = theme ? '#181818' : '#f8fafc'
+        const bgColor = theme ? '#0f0f0f' : '#f8fafc'
         const color = theme ? '#ffffff' : '#000000'
 
         const bannerBg = theme ? '#606060' : '#f1f1f1'
@@ -95,7 +95,7 @@ const Trending = () => {
         )
 
         const renderSuccessView = () => (
-          <VideosListContainer data-testid="trending">
+          <VideosListContainer>
             {videoDetails.details.map(eachVideo => (
               <VideoItem key={eachVideo.id} videoDetails={eachVideo} />
             ))}
@@ -129,7 +129,7 @@ const Trending = () => {
             <Headers />
             <TrendingContainer>
               <NavBar />
-              <Container bgColor={bgColor}>
+              <Container data-testid="trending" bgColor={bgColor}>
                 {renderBanner()}
                 {renderVideos()}
               </Container>

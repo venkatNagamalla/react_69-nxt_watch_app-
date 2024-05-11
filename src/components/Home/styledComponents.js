@@ -89,3 +89,59 @@ export const VideosListContainer = styled.ul`
     flex-wrap: wrap;
   }
 `
+
+export const PopupContainer = styled.div`
+  background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png');
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  @media screen and (min-width: 576px) {
+    margin: 13px;
+    height: 200px;
+    padding: 18px;
+  }
+`
+
+export const Popup = styled.div`
+  width: 95%;
+`
+
+export const WebsiteLogo = styled.img`
+  width: 100px;
+  @media screen and (min-width: 576px) {
+    width: 150px;
+  }
+`
+
+export const PopupText = styled.p`
+  color: #1f1f1f;
+  font-size: 20px;
+  margin-top: 15px;
+  @media screen and (min-width: 576px) {
+    font-size: 22px;
+  }
+`
+
+export const PopupBtn = styled.button`
+  border: 1px solid #1f1f1f;
+  color: #1f1f1f;
+  height: 40px;
+  width: 120px;
+  font-weight: 450;
+  font-size: 16px;
+  margin-top: 20px;
+  background-color: transparent;
+  @media screen and (min-width: 576px) {
+    margin-top: 25px;
+  }
+`
+
+export const Close = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+`

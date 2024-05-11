@@ -74,7 +74,7 @@ export const PopUpContainer = styled.div`
   border-radius: 8px;
 `
 
-export const PopUpHeading = styled.h1`
+export const PopUpHeading = styled.p`
   font-size: 18px;
   font-family: 'Roboto';
   font-weight: 405;

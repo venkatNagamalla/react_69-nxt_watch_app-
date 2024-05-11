@@ -9,24 +9,14 @@ import {
   DeskIconsContainer,
   IconName,
   SideBar,
+  SidebarContainer,
+  Text,
+  LogoIcons,
+  IconsContainer,
+  ContactText,
 } from './styledComponents'
 import Context from '../../context/Context'
 import './index.css'
-
-// const navList = [
-//   {
-//     id: 'HOME',
-//     name: 'Home',
-//     icon: <AiFillHome />,
-//     href: '/',
-//   },
-//   {
-//     id: 'TRENDING',
-//     name: 'Trending',
-//     icon: <ImFire />,
-//     href: '/trending',
-//   },
-// ]
 
 const NavBar = () => (
   <Context.Consumer>
@@ -40,6 +30,8 @@ const NavBar = () => (
       const activeTrendingBg = activeRoute === 'TRENDING' ? '#f1f5f9' : null
       const activeGamingBg = activeRoute === 'GAMING' ? '#f1f5f9' : null
       const activeSavedBg = activeRoute === 'SAVED' ? '#f1f5f9' : null
+
+      const textColor = theme ? '#ffffff' : '#181818'
 
       return (
         <>
@@ -157,7 +149,26 @@ const NavBar = () => (
               </Link>
             </DeskIconsContainer>
 
-            {/* render contact details */}
+            <SidebarContainer>
+              <ContactText color={textColor}>CONTACT US</ContactText>
+              <IconsContainer>
+                <LogoIcons
+                  src="https://assets.ccbp.in/frontend/react-js/nxt-watch-facebook-logo-img.png"
+                  alt="twitter logo"
+                />
+                <LogoIcons
+                  src="https://assets.ccbp.in/frontend/react-js/nxt-watch-twitter-logo-img.png"
+                  alt="facebook logo"
+                />
+                <LogoIcons
+                  src="https://assets.ccbp.in/frontend/react-js/nxt-watch-linked-in-logo-img.png"
+                  alt="linked in logo"
+                />
+              </IconsContainer>
+              <Text color={textColor}>
+                Enjoy! Now to see your channels and recommendations!
+              </Text>
+            </SidebarContainer>
           </SideBar>
         </>
       )

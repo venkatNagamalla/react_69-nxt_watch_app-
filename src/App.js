@@ -14,7 +14,7 @@ import './App.css'
 // Replace your code here
 
 class App extends Component {
-  state = {theme: false, activeRoute: 'HOME'}
+  state = {theme: false, activeRoute: 'HOME', savedVideosList: []}
 
   changeTheme = () => this.setState(prevState => ({theme: !prevState.theme}))
 
@@ -24,8 +24,32 @@ class App extends Component {
     console.log(localStorage.getItem('route'))
   }
 
+  addVideo = async data => {
+    const {savedVideosList} = this.state
+    if (savedVideosList.length > 0) {
+      const checkSavedVideos = savedVideosList.filter(
+        item => item.id === data.id,
+      )
+      if (checkSavedVideos.length === 0) {
+        await this.setState({
+          savedVideosList: [...savedVideosList, data],
+        })
+      }
+    } else {
+      await this.setState({
+        savedVideosList: [...savedVideosList, data],
+      })
+    }
+  }
+
+  removeVideo = id => {
+    const {savedVideosList} = this.state
+    const updatedList = savedVideosList.filter(eachVideo => eachVideo.id !== id)
+    this.setState({savedVideosList: updatedList})
+  }
+
   render() {
-    const {theme, activeRoute} = this.state
+    const {theme, activeRoute, savedVideosList} = this.state
     return (
       <Context.Provider
         value={{
@@ -33,6 +57,9 @@ class App extends Component {
           changeTheme: this.changeTheme,
           activeRoute,
           changeActiveRoute: this.changeActiveRoute,
+          savedVideosList,
+          addVideo: this.addVideo,
+          removeSavedVideo: this.removeVideo,
         }}
       >
         <Switch>

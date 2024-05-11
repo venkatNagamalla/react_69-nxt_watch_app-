@@ -71,7 +71,7 @@ const Gaming = () => {
       {value => {
         const {theme} = value
 
-        const bgColor = theme ? '#181818' : '#f8fafc'
+        const bgColor = theme ? '#0f0f0f' : '#f8fafc'
         const bannerBg = theme ? '#606060' : '#f1f1f1'
         const color = theme ? '#ffffff' : '#000000'
 
@@ -121,7 +121,7 @@ const Gaming = () => {
             <Headers />
             <GamingContainer>
               <NavBar />
-              <Container bgColor={bgColor}>
+              <Container data-testid="gaming" bgColor={bgColor}>
                 {renderBanner()}
                 {renderVideos()}
               </Container>

@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
+
 import Cookies from 'js-cookie'
-import {IoIosSearch} from 'react-icons/io'
+import {IoIosSearch, IoMdClose} from 'react-icons/io'
 import Headers from '../Headers'
 import NavBar from '../NavBar'
 import Context from '../../context/Context'
@@ -15,6 +16,12 @@ import {
   RetryButton,
   RetryContainer,
   VideosListContainer,
+  PopupContainer,
+  WebsiteLogo,
+  Popup,
+  PopupText,
+  PopupBtn,
+  Close,
 } from './styledComponents'
 import FailureView from '../FailureView'
 import VideoItem from '../VideoItem'
@@ -29,6 +36,7 @@ const apiStatusConstants = {
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState('')
+  const [banner, setBanner] = useState(true)
   const [videoDetails, setVideoDetails] = useState({
     apiStatus: apiStatusConstants.initial,
     details: [],
@@ -88,6 +96,8 @@ const Home = () => {
         const onSearchBtnClick = () => {
           getVideos()
         }
+
+        const onClose = () => setBanner(false)
 
         const renderSearchInput = () => (
           <InputContainer>
@@ -156,13 +166,31 @@ const Home = () => {
           }
         }
 
+        const renderPopup = () => (
+          <PopupContainer data-testid="banner" bgColor={bgColor}>
+            <Popup>
+              <WebsiteLogo
+                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
+                alt="nxt watch logo"
+              />
+              <PopupText>
+                Buy Nxt Watch Premium prepaid plans with UPI
+              </PopupText>
+              <PopupBtn>GET IT NOW</PopupBtn>
+            </Popup>
+            <Close data-testid="close" type="button" onClick={onClose}>
+              <IoMdClose size={20} />
+            </Close>
+          </PopupContainer>
+        )
+
         return (
           <>
             <Headers />
             <HomeContainer>
               <NavBar />
-              <Container bgColor={bgColor}>
-                {/* renderPopup */}
+              <Container data-testid="home" bgColor={bgColor}>
+                {banner && renderPopup()}
                 {renderSearchInput()}
                 {renderVideos()}
               </Container>

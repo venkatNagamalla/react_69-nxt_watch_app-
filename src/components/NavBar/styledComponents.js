@@ -53,6 +53,40 @@ export const SideBar = styled.div`
     height: 100vh;
     position: fixed;
     top: 53px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: ${props => props.background};
   }
+`
+export const SidebarContainer = styled.div`
+  width: 100%;
+  display: flex;
+  height: 210px;
+  flex-direction: column;
+  margin-bottom: 50px;
+  justify-content: space-between;
+  padding: 20px;
+`
+
+export const LogoIcons = styled.img`
+  width: 40px;
+  margin: 0px 10px 0px 0px;
+`
+export const IconsContainer = styled.div`
+  margin: 5px 0px 8px 0px;
+`
+
+export const Text = styled.p`
+  font-weight: 500;
+  width: 80%;
+  margin-bottom: 10px;
+  color: ${props => props.color};
+`
+
+export const ContactText = styled.p`
+  font-weight: bold;
+  width: 80%;
+  margin-bottom: 15px;
+  color: ${props => props.color};
 `

@@ -4,6 +4,7 @@ export const VideoMainContainer = styled.div`
   width: 100%;
   height: 80vh;
   margin-top: 10px;
+  background-color: ${props => props.bgColor};
   @media screen and (min-width: 768px) {
     padding: 18px;
   }
@@ -102,7 +103,7 @@ export const SaveButton = styled.button`
   align-items: center;
   font-size: 18px;
   border: none;
-  color: #64748b;
+  color: ${props => props.color};
   height: 35px;
   cursor: pointer;
   background-color: transparent;
